@@ -1,0 +1,27 @@
+header{
+	height: 50px;
+	display: flex;
+    justify-content: space-between;
+}
+footer{
+	height: 50px;
+	display: flex;
+    justify-content: space-between;
+}
+.headerClass{
+	border: solid red;
+}
+#main{
+	display: table;
+    width: 100%;
+}
+#mainContent{
+	border: blue solid;
+    width: 70%;
+    display: table-cell;
+}
+#sideBar{
+	border: solid green;
+    width: 30%;
+    display: table-cell;
+}
