@@ -25,7 +25,9 @@ header,footer{
 .headerClass:hover{
 	background-color: #fff;
 }
-
+.headerClass a{
+	text-decoration: none;
+}
 /* content and sidebar parent */
 #main{
     width: 100%;
