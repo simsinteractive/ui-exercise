@@ -37,8 +37,11 @@ buildControl = {
 		);
 	},
 	registerEvents:function(){
-		$(window).off('resize').on('resize',function(){
+		$(window).on('resize',function(){
 			buildControl.setFooterWidth();
+		});
+		$('#sidebarButton').on('click',function(){
+			$('#sideBar').fadeToggle();
 		})
 	},
 	setFooterWidth: function(){//copies the width of the header to the width of the footer
