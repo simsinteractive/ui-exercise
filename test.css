@@ -1,27 +1,78 @@
-header{
-	height: 50px;
+/* header and footer styling */
+header,footer{
 	display: flex;
-    justify-content: space-between;
+    background-color: #ccc;
+    padding: 7px 7px 7px 160px;
+    margin: 20px 0 20px 0;
+	border-radius: 15px;
+	min-height: 20px;
 }
-footer{
-	height: 50px;
-	display: flex;
-    justify-content: space-between;
-}
+
+/* header button styling */
 .headerClass{
-	border: solid red;
+	width: 200px;
+    margin-right: 30px;
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    padding: 5px;
+    background-color: #eee;
+	text-align: center;
+	border-radius: 15px;
 }
+.headerClass a{
+	text-decoration: none;
+}
+.headerClass:hover{
+	background-color: #fff;
+}
+
+/* content and sidebar parent */
 #main{
-	display: table;
     width: 100%;
 }
+
+/* content */
 #mainContent{
-	border: blue solid;
-    width: 70%;
-    display: table-cell;
+	width: 70%;
+	display: block;
+	float: left;
 }
+
+/* sidebar */
 #sideBar{
-	border: solid green;
+	background-color: #eee;
     width: 30%;
-    display: table-cell;
+	height: 600px;
+	float: left;
+    display: block;
+}
+
+/* tn cells wrapper */
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 100px;
+}
+
+/* tn cells content*/
+li {
+    display: inline-block;
+}
+.cellTop,.cellMid,.cellFoot{
+	width: 325px;
+}
+.cellMid{
+	font-size: 32px;
+	margin: 10px 0 10px 0;
+}
+.cellFoot{
+	font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #777;
+    line-height: 28px;
+	margin-bottom: 30px;
+	font-size: 17px;
+}
+.contentCell{
+	padding-left: 20px;
 }
