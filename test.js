@@ -1,5 +1,5 @@
-var buildModel = {
-	contentArr = {
+var buildModel = {//usually from JSON file or data
+	contentArr: {
 		"Vlisco": {
 			"text": "E-commerce with a colourful story",
 			"image": "test_image0.png"
@@ -29,11 +29,36 @@ var buildModel = {
 buildControl = {
 	init: function(){
 		this.buildContent();
+		this.registerEvents();
+		setTimeout(
+			function(){
+				buildControl.setFooterWidth();
+			},50//wait 50ms before using this function
+		);
+	},
+	registerEvents:function(){
+		$(window).off('resize').on('resize',function(){
+			buildControl.setFooterWidth();
+		})
+	},
+	setFooterWidth: function(){//copies the width of the header to the width of the footer
+		var thisWidth = $('header').width();
+		$('footer').css('width',thisWidth+'px');
 	},
 	buildContent: function(){
-		
-		
-		
+		var contentHolder = '<ul>';
+		$.each(buildModel.contentArr,function(key,value){
+			console.log(key, value)//verify output
+			contentHolder += '<li>' +
+				'<div class="contentCell">' +
+					'<div class="cellTop"><img src="'+ value.image +'"></div>' +
+					'<div class="cellMid">'+ key +'</div>' +
+					'<div class="cellFoot">'+ value.text +'</div>' +
+				'</div>' +
+			'</li>';
+		});
+		contentHolder += '</ul>';
+		$('#mainContent').append(contentHolder);
 	}
 }
 $(document).ready(function() {
